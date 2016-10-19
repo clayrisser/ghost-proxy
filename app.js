@@ -5,13 +5,14 @@ var app = express();
 var bearerToken = '';
 
 var options = {
-    ghost: 'https://blog.groupthreads.com',
-    blog: 'https://groupthreads.com/blog',
-    username: 'jam@groupthreads.com',
-    password: 'Cnmr4aoYUq8JjoYORjy0',
-    blacklist: [
+    ghost: process.env.GPROXY_GHOST || '', // location of your ghost installation
+    blog: process.env.GPROXY_BLOG || '', // location of the blog using the ghost proxy
+    username: process.env.GPROXY_USERNAME || '', // ghost login username
+    password: process.env.GPROXY_PASSWORD || '', // ghost login password
+    blacklist: process.env.GPROXY_BLACKLIST ? process.env.GPROXY_BLACKLIST.replace(' ', '').split(',') : [ // array of blacklisted endpoints
         '/users'
-    ]
+    ],
+    port: process.env.GPROXY_PORT || 3008 // port for the ghost proxy server
 };
 
 app.all('*', function(req, res, next) {
@@ -67,7 +68,7 @@ app.get('/:one/:two/:three', function(req, res) {
     }
 });
 
-app.listen(3000, function() {
+app.listen(options.port, function() {
     console.log('serving application');
 });
 
