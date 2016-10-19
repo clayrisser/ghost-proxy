@@ -37,19 +37,19 @@ npm install
 
 ## Docker
 View on [Docker](https://hub.docker.com/r/jamrizzi/ghost-proxy).
-    ### Usage
+### Usage
     
-    ```
-    sudo docker run --name ghost-proxy -d -p 3008:3008 -e GPROXY_GHOST=myghost.com -e GPROXY_USERNAME=username -e GPROXY_PASSWORD=password jamrizzi/ghost-proxy:latest
-    ```
+```
+sudo docker run --name ghost-proxy -d -p 3008:3008 -e GPROXY_GHOST=myghost.com -e GPROXY_USERNAME=username -e GPROXY_PASSWORD=password jamrizzi/ghost-proxy:latest
+```
 
-    ### Environment Variables
-    * GPROXY_GHOST - location of your ghost installation
-    * GPROXY_BLOG - location of the blog using the ghost proxy
-    * GPROXY_USERNAME - ghost login username
-    * GPROXY_PASSWORD - ghost login password
-    * GPROXY_BLACKLIST - comma separated list of blacklisted endpoints
-    * GPROXY_PORT - port of the ghost proxy server
+### Environment Variables
+* GPROXY_GHOST - location of your ghost installation
+* GPROXY_BLOG - location of the blog using the ghost proxy
+* GPROXY_USERNAME - ghost login username
+* GPROXY_PASSWORD - ghost login password
+* GPROXY_BLACKLIST - comma separated list of blacklisted endpoints
+* GPROXY_PORT - port of the ghost proxy server
 
 ## Planned Features
 * Advanced Blacklist Rules
