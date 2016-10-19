@@ -62,7 +62,7 @@ sudo docker run --name ghost-proxy -d -p 3008:3008 -e GPROXY_GHOST=myghost.com -
 5. Submit a pull request :D
 
 ## Credits
-* [Jam Risser](jam.jamrizzi.com)
+* [Jam Risser](http://jam.jamrizzi.com)
 
 ## License
 This project is licensed under the [GNU Public License version 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)
