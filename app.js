@@ -60,7 +60,7 @@ app.get('/:one', function(req, res) {
 
 app.get('/:one/:two', function(req, res) {
 	return new Promise(function(resolve, reject) {
-		return '/' + req.params.one + '/' + req.params.two;
+		resolve('/' + req.params.one + '/' + req.params.two);
 	}).then(function(slug) {
 		if (!isBlacklisted(slug)) {
 			return ghostRequest(slug)
@@ -79,7 +79,7 @@ app.get('/:one/:two', function(req, res) {
 
 app.get('/:one/:two/:three', function(req, res) {
 	return new Promise(function(resolve, reject) {
-		return '/' + req.params.one + '/' + req.params.two + '/' + req.params.three;
+		resolve('/' + req.params.one + '/' + req.params.two + '/' + req.params.three);
 	}).then(function(slug) {
 		if (!isBlacklisted(slug)) {
 			return ghostRequest(slug)
@@ -170,7 +170,7 @@ function ghostRequest(slug) {
 					throw err;
 				});
 			}).catch(function(err) {
-				reject(err);
+				throw err;
 			});
 		} else {
 			throw new Err('Unknown error', response.status);

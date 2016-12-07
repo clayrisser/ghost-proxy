@@ -1,6 +1,6 @@
 {
   "name": "ghost-proxy",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A rest API proxy for the Ghost blogging platform.",
   "main": "app.js",
   "scripts": {
