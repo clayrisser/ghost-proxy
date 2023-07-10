@@ -1,6 +1,8 @@
 # ghost-proxy
 A rest API proxy for the Ghost blogging platform.
 
+![](assets/ghost-proxy.png)
+
 ## Features
 * Works with any Ghost Installation
 * Blacklist Endpoints
